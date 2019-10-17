@@ -1,0 +1,112 @@
+<div ng-controller="HomeController">
+    <h2 align="center" style="color:#069">{{message}}</h3>
+
+        <!-- Post the Form request for initiating the SDK with the following parameters -->
+
+        <form method="post" name="payuForm" id="payuForm" action="https://sandbox.veri5digital.com/video-id-kyc/_init">
+            <table border="12" align="center" width="550" id="fixedheight" bordercolor="#013246">
+                <tr>
+                    <td><label for="male" width="100">Client Code</label></td>
+                    <td><input type="text" ng-model="clientCode" name="client_code" id="clientCode" value="khosla-labs"
+                            style="display:table-cell; width:100%" /></td>
+                </tr>
+                <tr>
+                    <td><label for="male">Request Id</label></td>
+                    <td><input type="text" ng-model="requestId" name="request_id" id="requestId"
+                            style="display:table-cell; width:100%" /></td>
+                </tr>
+                <td><label for="male">Stan</label></td>
+                <td><input type="text" ng-model="stan" name="stan" id="stan" style="display:table-cell; width:100%" />
+                </td>
+                </tr>
+                <td><label for="male">API Key</label></td>
+                <td><input type="password" ng-model="apiKey" name="api_key" id="apiKey" value=""
+                        style="display:table-cell; width:100%" /></td>
+                </tr>
+                </tr>
+                <td><label for="male">Redirect Url</label></td>
+                <td><input type="text" ng-model="redirectUrl" name="redirect_url" id="redirectUrl" value=""
+                        style="display:table-cell; width:100%" /></td>
+                </tr>
+                <td><label for="male">Purpose</label></td>
+                <td><input type="text" ng-model="purpose" name="purpose" id="purpose" value=""
+                        style="display:table-cell; width:100%" /></td>
+                </tr>
+                <td><label for="male">Email</label></td>
+                <td><input type="text" ng-model="email" name="email" id="email" value=""
+                        style="display:table-cell; width:100%" /></td>
+                </tr>
+                <td><label for="male">Mobile</label></td>
+                <td><input type="text" ng-model="mobile" name="mobile" id="mobile" value=""
+                        style="display:table-cell; width:100%" /></td>
+                </tr>
+
+                <td><label for="male">OTP Required</label></td>
+                <td><input type="text" ng-model="otpRequired" name="otp_required" id="otpRequired" value=""
+                        style="display:table-cell; width:100%" /></td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="2"><input type="button" value="Calculate Hash" ng-click="calculateHash()"
+                            class="buttons" /></td>
+                </tr>
+                <tr>
+                    <td><label for="male">Hash is</label></td>
+                    <td><input type="text" ng-model="hash" name="hash" id="hash" value={{hash}}
+                            style="display:table-cell; width:100%"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Submit" id="btn-pay" class="buttons" /></td>
+                </tr>
+            </table>
+        </form>
+
+        <style>
+            #fixedheight {
+
+                border-radius: 25px;
+                font-weight: bold;
+                font-size: 16px;
+
+            }
+
+            #fixedheight td {
+                font-size: 20px;
+            }
+
+
+            #fixedheight tr {
+                height: 30px;
+                text-align: center;
+            }
+
+            input {
+                border: none;
+                background: transparent;
+                align-content: center;
+                text-align: center;
+                font-size: 12px;
+
+            }
+
+            .buttons {
+                display: inline-block;
+                width: 30%;
+                /* set to 100% */
+                height: 50%;
+                /* set to 100% */
+                margin-bottom: 0.5em;
+                padding-top: .6em;
+                padding-bottom: .6em;
+                color: #fff;
+                background-color: #46A6CD;
+                border-radius: 5px;
+                border: solid #cccccc 1px;
+                box-shadow: 2px 2px 1px #888888;
+                display: block;
+                margin: auto;
+                font-size: 14;
+            }
+        </style>
+</div>

@@ -1,0 +1,187 @@
+<div ng-controller="FetchController" ng-init="init()">
+
+    <h1 align="center" style="color:#069">Offline KYC Fetch Details</h1>
+
+      <!-- To show the details after fetching data -->
+    <br>
+    <table border="3" align="center" width="500" id="fixedheight" bordercolor="#013246">
+        <tr>
+            <td><label for="apiKey" width="100">Api-Key</label></td>
+            <td><input type="textArea" ng-model="apiKey" name="apiKey" id="apiKey"
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="clientCode" width="100">clientCode</label></td>
+            <td><input type="textArea" ng-model="clientCode" name="clientCode" id="clientCode"
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" value="Fetch KYC Data" id="btn-pay" class="buttons"
+                    ng-click="fetchKYC()" /></td>
+        </tr>
+        <tr>
+            <td><label for="name" width="100">Name</label></td>
+            <td><input type="textArea" ng-model="name" name="name" id="name" value={{name}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="documentId" width="100">Document ID</label></td>
+            <td><input type="textArea" ng-model="documentId" name="documentId" id="documentId" value={{documentId}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="nameStatus" width="100">Name Status</label></td>
+            <td><input type="textArea" ng-model="nameStatus" name="nameStatus" id="nameStatus" value={{nameStatus}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="nameDescription" width="100">Name Description</label></td>
+            <td><input type="textArea" ng-model="nameDescription" name="nameDescription" id="nameDescription"
+                    value={{nameDescription}} style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="email" width="100">Email</label></td>
+            <td><input type="textArea" ng-model="email" name="email" id="email" value={{email}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="emailStatus" width="100">Email Status</label></td>
+            <td><input type="textArea" ng-model="emailStatus" name="emailStatus" id="emailStatus" value={{GenderStatus}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="emailDescription" width="100">Email Description</label></td>
+            <td><input type="textArea" ng-model="emailDescription" name="emailDescription" id="emailDescription"
+                    value={{emailDescription}} style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="dob" width="100">DOB</label></td>
+            <td><input type="textArea" ng-model="dob" name="dob" id="dob" value={{dob}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="dobStatus" width="100">DOB Status</label></td>
+            <td><input type="textArea" ng-model="dobStatus" name="dobStatus" id="dobStatus" value={{dobStatus}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="dobDescription" width="100">DOB Description</label></td>
+            <td><input type="textArea" ng-model="dobDescription" name="dobDescription" id="dobDescription"
+                    value={{dobDescription}} style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="mobile" width="100">Mobile</label></td>
+            <td><input type="textArea" ng-model="mobile" name="mobile" id="mobile" value={{mobile}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="mobileStatus" width="100">Mobile Status</label></td>
+            <td><input type="textArea" ng-model="mobileStatus" name="mobileStatus" id="mobileStatus"
+                    value={{mobileStatus}} style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="mobileDescription" width="100">Mobile Description</label></td>
+            <td><input type="textArea" ng-model="mobileDescription" name="mobileDescription" id="mobileDescription"
+                    value={{mobileDescription}} style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="gender" width="100">Gender</label></td>
+            <td><input type="textArea" ng-model="gender" name="gender" id="gender" value={{gender}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="genderStatus" width="100">Gender Status</label></td>
+            <td><input type="textArea" ng-model="genderStatus" name="genderStatus" id="genderStatus"
+                    value={{genderStatus}} style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="genderDescription" width="100">Gender Description</label></td>
+            <td><input type="textArea" ng-model="genderDescription" name="genderDescription" id="genderDescription"
+                    value={{genderDescription}} style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="address" width="100">Address</label></td>
+            <td><input type="textArea" ng-model="address" name="address" id="address" value={{address}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="addressStatus" width="100">Address Status</label></td>
+            <td><input type="textArea" ng-model="addressStatus" name="addressStatus" id="addressStatus"
+                    value={{addressStatus}} style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="addressDescription" width="100">Address Description</label></td>
+            <td><input type="textArea" ng-model="addressDescription" name="addressDescription" id="addressDescription"
+                    value={{addressDescription}} style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="photo" width="100">Photo</label></td>
+            <td><input type="textArea" ng-model="photo" name="photo" id="photo" value={{photo}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="photoStatus" width="100">Photo Status</label></td>
+            <td><input type="textArea" ng-model="photoStatus" name="photoStatus" id="photoStatus" value={{photoStatus}}
+                    style="display:table-cell; width:100%" /></td>
+        </tr>
+        <tr>
+            <td><label for="photoDescription" width="100">Photo Description</label></td>
+            <td><input type="textArea" ng-model="photoDescription" name="photoDescription" id="photoDescription"
+                    value={{photoDescription}} style="display:table-cell; width:100%" /></td>
+        </tr>
+
+    </table>
+</div>
+
+<style>
+    #fixedheight {
+
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 16px;
+
+    }
+
+    #fixedheight tr {
+        height: 30px;
+        text-align: center;
+
+    }
+
+    #fixedheight td {
+        font-size: 16px;
+    }
+
+    table tr td:first-child {
+        width: 200px;
+    }
+
+
+    input {
+        border: none;
+        background: transparent;
+        align-content: center;
+        text-align: center;
+        font-size: 16px;
+
+    }
+
+    .buttons {
+        display: inline-block;
+        width: 30%;
+        /* set to 100% */
+        height: 50%;
+        /* set to 100% */
+        margin-bottom: 0.5em;
+        padding-top: .6em;
+        padding-bottom: .6em;
+        color: #fff;
+        background-color: #46A6CD;
+        border-radius: 5px;
+        border: solid #cccccc 1px;
+        box-shadow: 2px 2px 1px #888888;
+        display: block;
+        margin: auto;
+        font-size: 14;
+    }
+</style>
